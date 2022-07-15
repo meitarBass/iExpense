@@ -12,6 +12,7 @@
 		A9404ED82880150C007C9BAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9404ED72880150C007C9BAD /* Assets.xcassets */; };
 		A9404EDB2880150C007C9BAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9404EDA2880150C007C9BAD /* Preview Assets.xcassets */; };
 		A9C2C3D828812C830085319D /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2C3D728812C830085319D /* ExpenseItem.swift */; };
+		A9C2C3DA28812F800085319D /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2C3D928812F800085319D /* AddView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		A9404ED72880150C007C9BAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9404EDA2880150C007C9BAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A9C2C3D728812C830085319D /* ExpenseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItem.swift; sourceTree = "<group>"; };
+		A9C2C3D928812F800085319D /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +39,7 @@
 		A9404EC72880150B007C9BAD = {
 			isa = PBXGroup;
 			children = (
+				A9C2C3D928812F800085319D /* AddView.swift */,
 				A9404ED22880150B007C9BAD /* iExpense */,
 				A9404ED12880150B007C9BAD /* Products */,
 			);
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9C2C3DA28812F800085319D /* AddView.swift in Sources */,
 				A9404ED62880150B007C9BAD /* ContentView.swift in Sources */,
 				A9C2C3D828812C830085319D /* ExpenseItem.swift in Sources */,
 				A9404ED42880150B007C9BAD /* iExpenseApp.swift in Sources */,
