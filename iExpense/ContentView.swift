@@ -17,22 +17,49 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(expenses.items) { item in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(item.name)
-                                .font(.headline)
-                            Text(item.type)
+            VStack {
+                // Personal list
+                List {
+                    ForEach(expenses.items) { item in
+                        if item.type == "Personal" {
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text(item.name)
+                                        .font(.headline)
+                                    Text(item.type)
+                                }
+                                
+                                Spacer()
+                                Text(item.amount, format: currentCurrency)
+                                    .foregroundColor(item.amount <= 10 ? .green :
+                                                        item.amount <= 100 ? .orange : .red)
+                            }
+                        }
+                    }
+                    .onDelete(perform: removeItems)
+                }
+                
+                // Business list
+                List {
+                    ForEach(expenses.items) { item in
+                        if item.type == "Business" {
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text(item.name)
+                                        .font(.headline)
+                                    Text(item.type)
+                                }
+                                
+                                Spacer()
+                                Text(item.amount, format: currentCurrency)
+                                    .foregroundColor(item.amount <= 10 ? .green :
+                                                        item.amount <= 100 ? .orange : .red)
+                            }
                         }
                         
-                        Spacer()
-                        Text(item.amount, format: currentCurrency)
-                            .foregroundColor(item.amount <= 10 ? .green :
-                                                item.amount <= 100 ? .orange : .red)
                     }
+                    .onDelete(perform: removeItems)
                 }
-                .onDelete(perform: removeItems)
             }
             .navigationTitle("iExpense")
             .toolbar {
