@@ -11,6 +11,9 @@ struct ContentView: View {
     @StateObject var expenses = Expenses()
     @State private var showingAddExpense = false
 
+    var currentCurrency: FloatingPointFormatStyle<Double>.Currency {
+        .currency(code: Locale.current.currencyCode ?? "USD")
+    }
 
     var body: some View {
         NavigationView {
@@ -24,7 +27,9 @@ struct ContentView: View {
                         }
                         
                         Spacer()
-                        Text(item.amount, format: .currency(code: "USD"))
+                        Text(item.amount, format: currentCurrency)
+                            .foregroundColor(item.amount <= 10 ? .green :
+                                                item.amount <= 100 ? .orange : .red)
                     }
                 }
                 .onDelete(perform: removeItems)
